@@ -328,3 +328,38 @@ https://api.gaolos.com/xxx/apirestgetdocumento?paramsin=
 }
 ```
 *Devuelve el informe indicado en formato PDF.*
+
+
+---
+
+## Devolución de un Error
+
+En caso de producirse un error, devolverá el siguiente JSON, donde `eserror` indica si ha habido un error o no, y `mensaje` indicará el tipo de error.
+
+```json
+{
+  "obj": null,
+  "err": {
+    "mensaje": "Factura no localizada",
+    "eserror": true
+  }
+}
+```
+
+---
+
+## Restricciones
+
+Las restricciones que puede definir dentro de Gaolos para limitar el acceso a la API son:
+
+- Por número de peticiones por tiempo.
+- Por IP de origen.
+
+El cliente es el encargado de dar de alta el acceso, bloqueo temporal o dar de baja el acceso a la API desde el Módulo de Dispositivos.
+
+---
+
+## Licencia
+
+El uso de esta API es exclusivo para clientes de Gaolos.
+
