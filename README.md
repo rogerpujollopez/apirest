@@ -5,11 +5,14 @@
 La API de Gaolos proporciona un acceso estructurado a los datos a través de varios endpoints diseñados para facilitar la gestión y recuperación de información específica. Este documento describe el funcionamiento y la utilización de los diferentes endpoints, incluyendo la definición de los parámetros de entrada y el formato de la respuesta.
 
 ## Índice
+## Índice
 - [Obtener Factura](#obtener-factura)
 - [Obtener Presupuesto](#obtener-presupuesto)
 - [Obtener Mantenimiento](#obtener-mantenimiento)
 - [Obtener Documento](#obtener-documento)
-
+- [Devolución de un Error](#devolución-de-un-error)
+- [Restricciones](#restricciones)
+- [Licencia](#licencia)
 ## Uso
 
 ### Obtener Factura
