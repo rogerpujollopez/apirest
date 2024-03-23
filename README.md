@@ -149,3 +149,33 @@ La API devuelve los siguientes campos para el presupuesto:
 
 
 
+
+---
+
+## Obtener Mantenimiento
+Para solicitar los datos de mantenimiento específico, se debe realizar una petición al endpoint siguiente:
+
+```
+https://api.gaolos.com/xxx/apirestgetmantenimiento?paramsin=
+```
+
+#### Parámetros de Entrada
+*Detalles sobre los parámetros de entrada serán definidos aquí.*
+
+### Respuesta de la API
+*El formato de la respuesta será definido aquí.*
+
+---
+
+## Obtener Documento
+Para solicitar un documento específico, se debe realizar una petición al endpoint siguiente:
+
+```
+https://api.gaolos.com/xxx/apirestgetdocumento?paramsin=
+```
+
+#### Parámetros de Entrada
+*Detalles sobre los parámetros de entrada serán definidos aquí.*
+
+### Respuesta de la API
+*El formato de la respuesta será definido aquí.*
