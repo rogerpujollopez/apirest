@@ -5,6 +5,7 @@
 La API de Gaolos proporciona un acceso estructurado a los datos a través de varios endpoints diseñados para facilitar la gestión y recuperación de información específica. Este documento describe el funcionamiento y la utilización de los diferentes endpoints, incluyendo la definición de los parámetros de entrada y el formato de la respuesta.
 
 ## Uso
+---
 
 ### Obtener Factura
 Para solicitar los datos de una factura específica, se debe realizar una petición al endpoint siguiente:
@@ -99,6 +100,7 @@ La API devuelve los siguientes campos para la factura y sus vencimientos:
 }
 ```
 
+---
 
 
 ### Obtener Presupuesto
