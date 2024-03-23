@@ -63,6 +63,43 @@ La API devuelve los siguientes campos para la factura y sus vencimientos:
   - `fe_dev`: Fecha de la última devolución, si ha sido devuelta.
   - `enespera`: Fecha de negociación del cobro, si está por negociar.
 
+## Ejemplo de Respuesta
+
+```json
+{
+  "obj": {
+    "id_fac": 4011118,
+    "fe_fa": "2024-03-22T00:00:00",
+    "usu": "Juan Perez",
+    "sicob": true,
+    "serie": "R24-",
+    "emp": "CONSTRUCCIONES MANOLO, S.L. ",
+    "admin": "",
+    "id_adm2": "",
+    "base": -24,
+    "total": -29.04,
+    "numenv": 1,
+    "ven": [
+      {
+        "fe_Ve": "2024-03-22T00:00:00",
+        "imp": -29.04,
+        "forma": "Compensado",
+        "cuecli": null,
+        "cueneg": null,
+        "fe_cob": "2024-03-22T00:00:00",
+        "fe_dev": null,
+        "enespera": null
+      }
+    ]
+  },
+  "err": {
+    "mensaje": null,
+    "eserror": false
+  }
+}
+```
+
+
 
 ### Obtener Presupuesto
 Para solicitar los datos de un presupuesto específico, se debe realizar una petición al endpoint siguiente:
