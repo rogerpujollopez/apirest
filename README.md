@@ -256,8 +256,75 @@ Para solicitar un documento específico, se debe realizar una petición al endpo
 https://api.gaolos.com/xxx/apirestgetdocumento?paramsin=
 ```
 
-#### Parámetros de Entrada
-*Detalles sobre los parámetros de entrada serán definidos aquí.*
 
-### Respuesta de la API
-*El formato de la respuesta será definido aquí.*
+### Subapartados de Documento
+
+#### Documento Factura
+##### Parámetros de Entrada
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_fac"],
+    "ParamsValues": [402298]
+  }
+}
+```
+*Devuelve la factura en formato PDF.*
+
+#### Documento Presupuesto
+##### Parámetros de Entrada
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_pres2"],
+    "ParamsValues": [402298]
+  }
+}
+```
+*Devuelve el presupuesto en formato PDF.*
+
+#### Documento Mantenimiento
+##### Parámetros de Entrada
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_man2"],
+    "ParamsValues": [402298]
+  }
+}
+```
+*Devuelve el certificado del último mantenimiento finalizado en formato PDF.*
+
+#### Documento Mantenimiento Certificado
+##### Parámetros de Entrada
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_manplan2c"],
+    "ParamsValues": [402298]
+  }
+}
+```
+*Devuelve el certificado indicado en formato PDF.*
+
+#### Documento Mantenimiento Informe
+##### Parámetros de Entrada
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_manplan2i"],
+    "ParamsValues": [402298]
+  }
+}
+```
+*Devuelve el informe indicado en formato PDF.*
