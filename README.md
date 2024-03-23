@@ -148,8 +148,29 @@ La API devuelve los siguientes campos para el presupuesto:
   - `total`: Importe total.
   - `numenv`: Número de envíos por correo electrónico.
 
+## Ejemplo de Respuesta
 
-
+```json
+{
+  "obj": {
+    "fe_al": "2024-03-18T10:19:36.217",
+    "id_pres2": 992446,
+    "tipopres": null,
+    "breve": "",
+    "cli": "C.P. LEPANTO 888",
+    "id_cli2": 888,
+    "admin": null,
+    "id_adm2": null,
+    "base": 58,
+    "total": 70.18,
+    "numenv": 0
+  },
+  "err": {
+    "eserror": false,
+    "salir": false
+  }
+}
+```
 
 ---
 
