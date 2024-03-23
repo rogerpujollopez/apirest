@@ -2,7 +2,7 @@
 # API de Acceso a Datos de Gaolos
 
 ## Descripción
-La API de Gaolos proporciona un acceso estructurado a los datos a través de varios endpoints diseñados para facilitar la gestión y recuperación de información específica. Este documento describe el funcionamiento y la utilización del endpoint `obtener factura`, incluyendo la definición de los parámetros de entrada y el formato de la respuesta.
+La API de Gaolos proporciona un acceso estructurado a los datos a través de varios endpoints diseñados para facilitar la gestión y recuperación de información específica. Este documento describe el funcionamiento y la utilización de los diferentes endpoints, incluyendo la definición de los parámetros de entrada y el formato de la respuesta.
 
 ## Uso
 
@@ -20,7 +20,7 @@ La solicitud debe incluir los siguientes parámetros en formato JSON:
 {
   "parameters": {
     "RefNeg": "Referencia negocio",
-    "ClaveSesion": "Token de sesión",
+    "ClaveSesion": "Token",
     "ParamsKeys": ["id_fac"],
     "ParamsValues": [4011118]
   }
@@ -37,21 +37,21 @@ La solicitud debe incluir los siguientes parámetros en formato JSON:
 ### Respuesta de la API
 
 #### Formato de la Respuesta
-La API devuelve los siguientes campos para las facturas y sus vencimientos:
+La API devuelve los siguientes campos para la factura y sus vencimientos:
 
 - **Factura:**
   - `id_fac`: Identificador de la factura.
-  - `fe_fa`: Fecha de emisión.
+  - `fe_fa`: Fecha de la factura.
   - `usu`: Usuario que generó la factura.
   - `sicob`: Estado de cobro (totalmente cobrada o no).
   - `serie`: Serie de la factura.
-  - `emp`: Empresa emisora.
+  - `emp`: Cliente.
   - `admin`: Administrador relacionado (si aplica).
   - `id_adm2`: Identificador del administrador relacionado (si aplica).
   - `base`: Importe base.
   - `total`: Importe total.
   - `numenv`: Número de envíos por correo electrónico.
-  - `ven`: Vencimientos.
+  - `ven`: Lista de vencimientos.
 
 - **Vencimiento:**
   - `fe_ve`: Fecha de vencimiento.
@@ -59,7 +59,56 @@ La API devuelve los siguientes campos para las facturas y sus vencimientos:
   - `forma`: Forma de pago.
   - `cuecli`: IBAN del cliente.
   - `cueneg`: IBAN de destino.
-  - `fe_cob`: Fecha de cobro.
-  - `fe_dev`: Fecha de la última devolución.
-  - `enespera`: Fecha de negociación del cobro.
+  - `fe_cob`: Fecha de cobro, si está cobrada.
+  - `fe_dev`: Fecha de la última devolución, si ha sido devuelta.
+  - `enespera`: Fecha de negociación del cobro, si está por negociar.
+
+
+### Obtener Presupuesto
+Para solicitar los datos de un presupuesto específico, se debe realizar una petición al endpoint siguiente:
+
+```
+https://api.gaolos.com/xxx/apirestgetpresupuesto?paramsin=
+```
+
+#### Parámetros de Entrada
+La solicitud debe incluir los siguientes parámetros en formato JSON:
+
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_pres2"],
+    "ParamsValues": [4011118]
+  }
+}
+```
+
+- `RefNeg`: Referencia del negocio.
+- `ClaveSesion`: Token de autenticación.
+- `ParamsKeys`: Clave de identificación del presupuesto.
+- `ParamsValues`: Identificador del presupuesto que se desea obtener.
+
+**Nota:** `ParamsValues` debe contener el identificador único del presupuesto. La API devuelve los datos de un único presupuesto por solicitud.
+
+### Respuesta de la API
+
+#### Formato de la Respuesta
+La API devuelve los siguientes campos para el presupuesto:
+
+- **Factura:**
+  - `id_pres2`: Identificador del presupuesto.
+  - `fe_al`: Fecha de creación.
+  - `tipopres`: Tipo presupuesto, si procede.
+  - `breve`: Breve comentario.
+  - `cli`: Cliente.
+  - `id_cli2`: Identificador del cliente.
+  - `admin`: Administrador relacionado (si aplica).
+  - `id_adm2`: Identificador del administrador relacionado (si aplica).
+  - `base`: Importe base.
+  - `total`: Importe total.
+  - `numenv`: Número de envíos por correo electrónico.
+
+
 
