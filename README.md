@@ -10,7 +10,7 @@ La API de Gaolos proporciona un acceso estructurado a los datos a través de var
 Para solicitar los datos de una factura específica, se debe realizar una petición al endpoint siguiente:
 
 ```
-https://api.gaolos.com/outdoor/apirestgetfactura?paramsin=
+https://api.gaolos.com/xxx/apirestgetfactura?paramsin=
 ```
 
 #### Parámetros de Entrada
