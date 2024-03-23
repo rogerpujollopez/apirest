@@ -332,6 +332,23 @@ https://api.gaolos.com/xxx/apirestgetdocumento?paramsin=
 ```
 *Devuelve el informe indicado en formato PDF.*
 
+## Ejemplo de Respuesta
+
+```json
+{
+  "obj": {
+    "tipo": "pdf",
+    "nombre": "Factura R24-140.pdf",
+    "fichero": "JVBERi0xLj......CAwIFINCj4+DQoNCnN0YXJ0eHJlZg0KNzIxMTMNCiUlRU9GDQo=",
+    "tipoMime": "application/pdf"
+  },
+  "err": {
+    "mensaje": null,
+    "eserror": false
+  }
+}
+```
+
 
 ---
 
