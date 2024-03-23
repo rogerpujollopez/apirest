@@ -257,7 +257,7 @@ https://api.gaolos.com/xxx/apirestgetdocumento?paramsin=
 ```
 
 
-### Subapartados de Documento
+### Tipos de Documento
 
 #### Documento Factura
 ##### Parámetros de Entrada
