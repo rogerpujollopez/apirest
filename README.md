@@ -183,16 +183,70 @@ La API devuelve los siguientes campos para el presupuesto:
 ## Obtener Mantenimiento
 Para solicitar los datos de mantenimiento específico, se debe realizar una petición al endpoint siguiente:
 
-```
-https://api.gaolos.com/xxx/apirestgetmantenimiento?paramsin=
+#### Parámetros de Entrada
+La solicitud debe incluir los siguientes parámetros en formato JSON:
+
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_man2"],
+    "ParamsValues": [4011118]
+  }
+}
 ```
 
-#### Parámetros de Entrada
-*Detalles sobre los parámetros de entrada serán definidos aquí.*
+- `RefNeg`: Referencia del negocio.
+- `ClaveSesion`: Token de autenticación.
+- `ParamsKeys`: Clave de identificación del mantenimiento.
+- `ParamsValues`: Identificador del mantenimiento que se desea obtener.
+
+**Nota:** `ParamsValues` debe contener el identificador único del mantenimiento. La API devuelve los datos de un único mantenimiento por solicitud.
 
 ### Respuesta de la API
-*El formato de la respuesta será definido aquí.*
 
+#### Formato de la Respuesta
+La API devuelve los siguientes campos para el mantenimiento:
+
+- **Mantenimiento:**
+  - `id_man2`: Identificador del mantenimiento.
+  - `fe_in`: Fecha de inicio.
+  - `fe_exp`: Fecha de expiración, sí la hay.
+  - `perivis`: El nº de días entre revisiones.
+  - `mes`: Mes de la revisión anual.
+  - `fe_prox`: Fecha de la próxima revisión.
+  - `obspub`: Observaciones públicas.
+  - `obspriv`: Observaciones privadas.
+  - `id_asis2`: Nº de asistencia.
+  - `fe_fin`: Fecha de finalización de la asistencia.
+  - `usu_fin`: Usuario que finaliza la asistencia.
+  - `manok`: Indica si el resultado del mantenimiento ha sido correcto.
+
+## Ejemplo de Respuesta
+
+```json
+{
+  "obj": {
+    "fe_in": "2023-05-01T00:00:00",
+    "fe_exp": null,
+    "id_man2": 48,
+    "perivis": 90,
+    "mes": 5,
+    "fe_prox": "2024-05-01T00:00:00",
+    "obspub": "",
+    "obspriv": "",
+    "id_asis2": 112233,
+    "fe_fin": null,
+    "usu_fin": null,
+    "manok": false
+  },
+  "err": {
+    "eserror": false,
+    "salir": false
+  }
+}
+```
 ---
 
 ## Obtener Documento
