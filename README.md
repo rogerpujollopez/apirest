@@ -79,7 +79,8 @@ La API devuelve los siguientes campos para la información del cliente:
     "eserror": false,
     "salir": false
   }
-}```
+}
+```
 
 ---
 
