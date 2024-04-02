@@ -5,7 +5,7 @@
 La API de Gaolos proporciona un acceso estructurado a los datos a través de varios endpoints diseñados para facilitar la gestión y recuperación de información específica. Este documento describe el funcionamiento y la utilización de los diferentes endpoints, incluyendo la definición de los parámetros de entrada y el formato de la respuesta.
 
 ## Índice
-## Índice
+- [Obtener información de un cliente](#Obtener-información-de-un-cliente)
 - [Obtener Factura](#obtener-factura)
 - [Obtener Presupuesto](#obtener-presupuesto)
 - [Obtener Mantenimiento](#obtener-mantenimiento)
@@ -14,6 +14,74 @@ La API de Gaolos proporciona un acceso estructurado a los datos a través de var
 - [Restricciones](#restricciones)
 - [Licencia](#licencia)
 ## Uso
+
+### Obtener información de un cliente
+Para solicitar las facturas, presupuestos y mantenimientos de un cliente, se debe realizar una petición al endpoint siguiente:
+
+```
+https://api.gaolos.com/xxx/apirestgetclienteinformacion?paramsin=
+```
+
+#### Parámetros de Entrada
+La solicitud debe incluir los siguientes parámetros en formato JSON:
+
+```json
+{
+  "parameters": {
+    "RefNeg": "Referencia negocio",
+    "ClaveSesion": "Token",
+    "ParamsKeys": ["id_cli2","año"],
+    "ParamsValues": [34359],[2024]
+  }
+}
+```
+
+- `RefNeg`: Referencia del negocio.
+- `ClaveSesion`: Token de autenticación.
+- `ParamsKeys`: Clave de identificación del cliente y el año como límite para las facturas.
+- `ParamsValues`: Identificador del cliente y el año.
+
+**Nota:** `ParamsValues` debe contener el identificador único del cliente. La API devuelve los datos de un único cliente por solicitud.
+
+### Respuesta de la API
+
+#### Formato de la Respuesta
+La API devuelve los siguientes campos para la información del cliente:
+
+- **Datos del cliente:**
+  - `detfacs`: Lista de identificadores de las facturas (id_fac).
+  - `detpres`: Lista de identificadores de los presupuestos y sí está en borrador (id_pres2, borrador).
+  - `detman`: Lista de identificadores de los mantenimientos (id_man2).
+
+## Ejemplo de Respuesta
+
+```json
+{
+  "obj": {
+    "detfacs": [
+      {
+        "id_fac": 393153
+      }
+    ],
+    "detpres": [
+      {
+        "id_pres2": 81248,
+        "borrador": false
+      }
+    ],
+    "detman": [
+      {
+        "id_man2": 13830
+      }
+    ]
+  },
+  "err": {
+    "eserror": false,
+    "salir": false
+  }
+}```
+
+---
 
 ### Obtener Factura
 Para solicitar los datos de una factura específica, se debe realizar una petición al endpoint siguiente:
