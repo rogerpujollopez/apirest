@@ -213,7 +213,7 @@ La solicitud debe incluir los siguientes parámetros en formato JSON:
 #### Formato de la Respuesta
 La API devuelve los siguientes campos para el presupuesto:
 
-- **Factura:**
+- **Presupuesto:**
   - `id_pres2`: Identificador del presupuesto.
   - `fe_al`: Fecha de creación.
   - `tipopres`: Tipo presupuesto, si procede.
